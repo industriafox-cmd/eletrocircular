@@ -1,0 +1,2 @@
+lead_id,created_time,first_contact_time,responded_time,status,loss_reason,owner
+l:exemplo,2026-05-01T09:00:00-05:00,2026-05-01T09:08:00-05:00,2026-05-01T09:20:00-05:00,SQL,,Comercial
