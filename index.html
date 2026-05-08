@@ -6,27 +6,38 @@
   <title>EletroCircular BI</title>
   <style>
     :root {
-      --bg: #f3f5f2;
-      --surface: #ffffff;
-      --surface-2: #f9faf8;
-      --ink: #162019;
-      --muted: #667269;
-      --line: #dce3dc;
-      --green: #137447;
-      --green-soft: #e7f3ec;
-      --red: #a43a32;
-      --red-soft: #fff0ed;
-      --amber: #a96b13;
-      --amber-soft: #fff4df;
-      --blue: #22577a;
-      --blue-soft: #eaf2f7;
-      --shadow: 0 10px 30px rgba(20, 33, 24, .06);
+      --app: #050917;
+      --rail: #060b1a;
+      --rail-active: #273246;
+      --bg: #050917;
+      --canvas: #050917;
+      --surface: #080d1d;
+      --surface-2: #101827;
+      --ink: #f8fafc;
+      --muted: #98a2b3;
+      --line: #2c3447;
+      --line-strong: #465064;
+      --green: #31c48d;
+      --green-soft: rgba(49,196,141,.13);
+      --red: #ef476f;
+      --red-soft: rgba(239,71,111,.14);
+      --amber: #d8a312;
+      --amber-soft: rgba(216,163,18,.15);
+      --blue: #3b82f6;
+      --blue-soft: rgba(59,130,246,.13);
+      --purple: #8b5cf6;
+      --cyan: #42a5a7;
+      --pink: #e12d6f;
+      --shadow: 0 12px 34px rgba(0, 0, 0, .28);
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      background: var(--bg);
+      background:
+        radial-gradient(circle at 18% 8%, rgba(66,165,167,.18), transparent 28%),
+        radial-gradient(circle at 82% 12%, rgba(139,92,246,.13), transparent 32%),
+        var(--app);
       color: var(--ink);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
       letter-spacing: 0;
@@ -41,68 +52,103 @@
       position: sticky;
       top: 0;
       height: 100vh;
-      background: #ffffff;
+      background: var(--rail);
       border-right: 1px solid var(--line);
-      padding: 22px 18px;
+      padding: 18px 15px;
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 14px;
+      color: var(--ink);
     }
     .brand {
       display: grid;
-      gap: 4px;
-      padding-bottom: 16px;
+      gap: 6px;
+      padding: 8px 9px 14px;
       border-bottom: 1px solid var(--line);
     }
-    .brand strong { font-size: 18px; }
+    .brand strong {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 15px;
+      letter-spacing: .2px;
+    }
+    .brand strong::before {
+      content: "";
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      background: conic-gradient(from 180deg, #fff, #7dd3fc, #fff, #7dd3fc, #fff);
+      box-shadow: inset 0 -5px 0 rgba(0,0,0,.12);
+    }
     .brand span, .meta { color: var(--muted); font-size: 12px; line-height: 1.35; }
     nav { display: grid; gap: 6px; }
     nav a {
-      color: var(--ink);
+      color: #d8dee9;
       text-decoration: none;
-      padding: 10px 11px;
-      border-radius: 7px;
+      padding: 10px 10px 10px 13px;
+      border-radius: 5px;
       font-size: 13px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border-left: 3px solid transparent;
     }
-    nav a:hover { background: var(--surface-2); }
+    nav a:hover {
+      background: var(--rail-active);
+      color: #fff;
+      border-left-color: var(--blue);
+    }
     .nav-dot {
-      width: 7px;
-      height: 7px;
+      width: 8px;
+      height: 8px;
       border-radius: 99px;
-      background: var(--line);
+      background: var(--line-strong);
     }
     .nav-dot.hot { background: var(--red); }
     .nav-dot.good { background: var(--green); }
     .side-footer { margin-top: auto; display: grid; gap: 8px; }
-    main { min-width: 0; }
+    main {
+      min-width: 0;
+      background: transparent;
+    }
     .topbar {
       position: sticky;
       top: 0;
       z-index: 10;
-      background: rgba(243,245,242,.94);
+      background: rgba(5,9,23,.94);
       border-bottom: 1px solid var(--line);
-      padding: 16px 26px;
-      backdrop-filter: blur(10px);
+      padding: 14px 28px 12px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
     }
     .topbar-inner {
-      max-width: 1280px;
+      max-width: 1440px;
       margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: end;
+      display: grid;
+      grid-template-columns: minmax(260px, 1fr) auto;
+      gap: 18px;
+      align-items: center;
     }
     h1, h2, h3, p { margin: 0; }
-    h1 { font-size: 24px; line-height: 1.15; }
-    h2 { font-size: 16px; margin-bottom: 12px; }
+    h1 { font-size: 19px; line-height: 1.2; font-weight: 750; }
+    h2 {
+      font-size: 13px;
+      margin-bottom: 10px;
+      font-weight: 760;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: #edf2f7;
+    }
     h3 { font-size: 14px; margin-bottom: 8px; }
     .controls {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       align-items: end;
+      padding: 7px;
+      background: #060b1a;
+      border: 1px solid var(--line);
+      border-radius: 7px;
     }
     label {
       color: var(--muted);
@@ -111,101 +157,119 @@
       gap: 5px;
     }
     input {
-      height: 38px;
+      height: 34px;
       border: 1px solid var(--line);
-      border-radius: 7px;
-      background: #fff;
+      border-radius: 4px;
+      background: #070d1b;
       padding: 0 10px;
       color: var(--ink);
     }
     .btn {
-      height: 38px;
-      border: 1px solid var(--green);
-      background: var(--green);
+      height: 34px;
+      border: 1px solid var(--blue);
+      background: linear-gradient(180deg, #1d4ed8, #1e40af);
       color: #fff;
-      border-radius: 7px;
+      border-radius: 4px;
       padding: 0 14px;
       font-weight: 700;
       cursor: pointer;
     }
     .content {
-      max-width: 1280px;
+      max-width: 1440px;
       margin: 0 auto;
-      padding: 22px 26px 52px;
+      padding: 18px 24px 48px;
       display: grid;
-      gap: 16px;
+      gap: 12px;
+      background: transparent;
     }
     .panel, .card {
-      background: var(--surface);
+      background: linear-gradient(180deg, rgba(16,24,39,.92), rgba(8,13,29,.92));
       border: 1px solid var(--line);
       border-radius: 8px;
       box-shadow: var(--shadow);
     }
-    .panel { padding: 16px; }
+    .panel { padding: 13px; }
     .hero {
       display: grid;
-      grid-template-columns: minmax(320px, .9fr) minmax(520px, 1.5fr);
-      gap: 16px;
+      grid-template-columns: minmax(300px, .72fr) minmax(680px, 1.28fr);
+      gap: 12px;
     }
     .verdict {
       display: grid;
-      gap: 14px;
+      gap: 12px;
       align-content: start;
-      min-height: 232px;
+      min-height: 218px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(59,130,246,.14), transparent 28%),
+        linear-gradient(180deg, rgba(16,24,39,.96), rgba(8,13,29,.96));
+      border-top: 0;
     }
     .pill {
       display: inline-flex;
       width: fit-content;
       align-items: center;
-      border-radius: 999px;
-      padding: 5px 10px;
+      border-radius: 4px;
+      padding: 5px 8px;
       color: #fff;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .04em;
     }
     .pill.good { background: var(--green); }
     .pill.bad { background: var(--red); }
     .pill.warn { background: var(--amber); }
     .pill.info { background: var(--blue); }
-    .verdict-title { font-size: 28px; line-height: 1.08; }
-    .body-copy { color: var(--muted); font-size: 14px; line-height: 1.48; }
+    .verdict-title { font-size: 24px; line-height: 1.12; letter-spacing: -.01em; }
+    .body-copy { color: var(--muted); font-size: 13px; line-height: 1.42; }
     .health-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(120px, 1fr));
-      gap: 10px;
+      gap: 8px;
     }
     .metric-card {
       border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 13px;
-      background: var(--surface-2);
-      min-height: 116px;
+      border-radius: 4px;
+      padding: 12px 12px 10px;
+      background: #090f20;
+      min-height: 108px;
       display: grid;
       align-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+    .metric-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--line-strong);
     }
     .metric-label { color: var(--muted); font-size: 12px; }
-    .metric-value { font-size: 28px; font-weight: 850; line-height: 1.05; }
+    .metric-value { font-size: 27px; font-weight: 800; line-height: 1.05; }
     .metric-note { color: var(--muted); font-size: 12px; line-height: 1.35; }
-    .metric-card.good { background: var(--green-soft); border-color: #b9dac5; }
-    .metric-card.bad { background: var(--red-soft); border-color: #efbdb4; }
-    .metric-card.warn { background: var(--amber-soft); border-color: #efd08b; }
-    .metric-card.info { background: var(--blue-soft); border-color: #bdd4df; }
+    .metric-card.good::before { background: var(--green); }
+    .metric-card.bad::before { background: var(--red); }
+    .metric-card.warn::before { background: var(--amber); }
+    .metric-card.info::before { background: var(--cyan); }
     .section-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(240px, 1fr));
-      gap: 16px;
+      gap: 12px;
     }
     .two-col {
       display: grid;
       grid-template-columns: minmax(360px, 1fr) minmax(360px, 1fr);
-      gap: 16px;
+      gap: 12px;
     }
     .alert-stack { display: grid; gap: 10px; }
     .alert {
       border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 12px;
-      background: var(--surface-2);
+      border-radius: 4px;
+      padding: 10px 11px;
+      background: #0b1224;
       display: grid;
       gap: 4px;
       line-height: 1.38;
@@ -217,42 +281,49 @@
     .bar-list { display: grid; gap: 9px; }
     .bar-row {
       display: grid;
-      grid-template-columns: minmax(150px, 240px) 1fr 58px;
+      grid-template-columns: minmax(150px, 230px) 1fr 56px;
       gap: 10px;
       align-items: center;
       font-size: 13px;
     }
     .track {
-      height: 10px;
-      border-radius: 99px;
+      height: 12px;
+      border-radius: 2px;
       overflow: hidden;
-      background: #e8eee7;
+      background: #151f31;
     }
-    .fill { height: 100%; background: var(--green); }
+    .fill { height: 100%; background: linear-gradient(90deg, var(--cyan), var(--blue)); }
     .fill.warn { background: var(--amber); }
     .fill.bad { background: var(--red); }
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 13px;
+      font-size: 12px;
+      background: #080d1d;
     }
     th, td {
-      padding: 10px 8px;
+      padding: 9px 8px;
       border-bottom: 1px solid var(--line);
       text-align: left;
       vertical-align: top;
     }
-    th { color: var(--muted); font-weight: 750; }
+    th {
+      color: #d7deea;
+      font-weight: 750;
+      background: #111827;
+      position: sticky;
+      top: 0;
+    }
     .action-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(260px, 1fr));
-      gap: 10px;
+      gap: 8px;
     }
     .action-card {
       border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 12px;
-      background: var(--surface-2);
+      border-radius: 4px;
+      padding: 11px;
+      background: #090f20;
       display: grid;
       gap: 7px;
     }
@@ -263,7 +334,7 @@
       align-items: start;
     }
     .tag {
-      border-radius: 999px;
+      border-radius: 3px;
       padding: 4px 8px;
       color: #fff;
       font-size: 11px;
@@ -278,19 +349,54 @@
       gap: 7px;
     }
     code {
-      background: var(--surface-2);
+      background: #0b1224;
       border: 1px solid var(--line);
-      border-radius: 6px;
+      border-radius: 4px;
       padding: 8px;
       color: var(--muted);
       font-size: 12px;
       white-space: normal;
     }
+    .report-tabs {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      padding-top: 10px;
+      margin-top: 10px;
+      border-top: 1px solid var(--line);
+    }
+    .report-tab {
+      border: 1px solid var(--line);
+      background: #090f20;
+      border-radius: 3px;
+      padding: 6px 10px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .report-tab.active {
+      background: #111827;
+      color: #fff;
+      border-bottom: 3px solid var(--blue);
+    }
+    .mini-kpis {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(120px, 1fr));
+      gap: 8px;
+    }
+    .mini-kpis .metric-value { font-size: 23px; }
+    .table-wrap {
+      max-height: 380px;
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+    }
     @media (max-width: 1080px) {
       .app { grid-template-columns: 1fr; }
-      aside { position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--line); }
+      aside { position: static; height: auto; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.08); }
       nav { grid-template-columns: repeat(3, 1fr); }
       .hero, .two-col, .section-grid { grid-template-columns: 1fr; }
+      .topbar-inner { grid-template-columns: 1fr; }
     }
     @media (max-width: 720px) {
       .topbar-inner, .controls { display: grid; grid-template-columns: 1fr; }
@@ -326,6 +432,12 @@
         <div>
           <h1>Saúde da aquisição e escala PNRS</h1>
           <p class="body-copy">Acompanhe se o crescimento vem de mídia, qualidade de base, velocidade comercial ou parceiros.</p>
+          <div class="report-tabs">
+            <span class="report-tab active">Visão executiva</span>
+            <span class="report-tab">Aquisição</span>
+            <span class="report-tab">PNRS</span>
+            <span class="report-tab">Comercial</span>
+          </div>
         </div>
         <div class="controls">
           <label>Início<input id="since" type="date" value="2026-05-01"></label>
@@ -371,23 +483,23 @@
       <section class="section-grid" id="midia">
         <div class="panel">
           <h2>Mídia</h2>
-          <div class="health-grid">
-            <div><div class="metric-label">CTR link</div><div class="metric-value" id="linkCtr">-</div></div>
-            <div><div class="metric-label">CPC link</div><div class="metric-value" id="cpcLink">-</div></div>
+          <div class="mini-kpis">
+            <div class="metric-card info"><div class="metric-label">CTR link</div><div class="metric-value" id="linkCtr">-</div></div>
+            <div class="metric-card info"><div class="metric-label">CPC link</div><div class="metric-value" id="cpcLink">-</div></div>
           </div>
         </div>
         <div class="panel">
           <h2>Qualidade</h2>
-          <div class="health-grid">
-            <div><div class="metric-label">CNPJ válidos</div><div class="metric-value" id="validCnpj">-</div></div>
-            <div><div class="metric-label">Sem CNPJ</div><div class="metric-value" id="blankCnpj">-</div></div>
+          <div class="mini-kpis">
+            <div class="metric-card good"><div class="metric-label">CNPJ válidos</div><div class="metric-value" id="validCnpj">-</div></div>
+            <div class="metric-card warn"><div class="metric-label">Sem CNPJ</div><div class="metric-value" id="blankCnpj">-</div></div>
           </div>
         </div>
         <div class="panel" id="jornada">
           <h2>Jornada</h2>
-          <div class="health-grid">
-            <div><div class="metric-label">SQL</div><div class="metric-value" id="sqlEl">-</div></div>
-            <div><div class="metric-label">Status</div><div class="metric-value" id="journeyStatus">-</div></div>
+          <div class="mini-kpis">
+            <div class="metric-card bad"><div class="metric-label">SQL</div><div class="metric-value" id="sqlEl">-</div></div>
+            <div class="metric-card bad"><div class="metric-label">Status</div><div class="metric-value" id="journeyStatus">-</div></div>
           </div>
         </div>
       </section>
@@ -442,10 +554,12 @@
       </section>
       <section class="panel">
         <h2>Campanhas</h2>
-        <table>
-          <thead><tr><th>Campanha</th><th>Objetivo</th><th>Gasto</th><th>Resultados</th><th>CPL/CPR</th><th>Cliques link</th></tr></thead>
-          <tbody id="campaignRows"></tbody>
-        </table>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Campanha</th><th>Objetivo</th><th>Gasto</th><th>Resultados</th><th>CPL/CPR</th><th>Cliques link</th></tr></thead>
+            <tbody id="campaignRows"></tbody>
+          </table>
+        </div>
       </section>
       <section class="panel sources" id="fontes">
         <h2>Arquivos Usados no BI</h2>
