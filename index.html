@@ -391,7 +391,9 @@
       color: var(--muted);
       font-size: 12px;
       font-weight: 700;
+      cursor: pointer;
     }
+    .report-tab:hover { color: #fff; border-color: rgba(59,130,246,.42); }
     .report-tab.active {
       background: rgba(59,130,246,.18);
       color: #fff;
@@ -497,15 +499,15 @@
           <h1>Saúde da aquisição e escala PNRS</h1>
           <p class="body-copy">Acompanhe se o crescimento vem de mídia, qualidade de base, velocidade comercial ou parceiros.</p>
           <div class="report-tabs">
-            <span class="report-tab active">Visão executiva</span>
-            <span class="report-tab">Aquisição</span>
-            <span class="report-tab">PNRS</span>
-            <span class="report-tab">Comercial</span>
+            <button class="report-tab active" type="button" data-target="resumo">Visão executiva</button>
+            <button class="report-tab" type="button" data-target="midia">Aquisição</button>
+            <button class="report-tab" type="button" data-target="pnrs">PNRS</button>
+            <button class="report-tab" type="button" data-target="comercial">Comercial</button>
           </div>
         </div>
         <div class="controls">
           <label>Início<input id="since" type="date" value="2026-05-01"></label>
-          <label>Fim<input id="until" type="date" value="2026-05-20"></label>
+          <label>Fim<input id="until" type="date" value="2026-05-25"></label>
           <button class="btn" id="refreshBtn">Atualizar</button>
         </div>
       </div>
@@ -763,6 +765,15 @@ async function refresh(){
   }catch(e){$('alerts').innerHTML=`<div class="alert bad"><strong>Erro ao carregar dados</strong><span>${e.message}</span></div>`}
 }
 $('refreshBtn').onclick=refresh;
+$('since').addEventListener('change', refresh);
+$('until').addEventListener('change', refresh);
+document.querySelectorAll('.report-tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.report-tab').forEach(item=>item.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.target)?.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
 refresh();
 </script>
 </body>
