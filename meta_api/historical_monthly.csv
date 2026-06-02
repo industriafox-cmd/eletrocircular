@@ -1,5 +1,5 @@
 month,since,until,spend,leads,validations,sql,source
-Fevereiro,2026-02-01,2026-02-28,5510.00,200,33,0,Sheets histórico
-Março,2026-03-01,2026-03-31,10187.04,803,142,76,Sheets histórico
-Abril,2026-04-01,2026-04-30,13938.10,1481,155,168,Sheets histórico
-Maio,2026-05-01,2026-05-25,9999.19,2880,215,267,Meta export + histórico comercial
+Fevereiro,2026-02-01,2026-02-28,5510.00,200,166,0,Sheets histórico + CNPJ leads
+Março,2026-03-01,2026-03-31,10187.04,803,661,76,Sheets histórico + CNPJ leads
+Abril,2026-04-01,2026-04-30,13938.10,1481,1282,168,Sheets histórico + CNPJ leads
+Maio,2026-05-01,2026-05-25,9999.19,2880,2455,267,Meta export + CNPJ leads + SQL corrigido
