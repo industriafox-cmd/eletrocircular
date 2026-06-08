@@ -375,6 +375,11 @@
       font-size: 12px;
       white-space: normal;
     }
+    .sources a {
+      color: #93c5fd;
+      text-decoration: none;
+    }
+    .sources a:hover { text-decoration: underline; }
     .report-tabs {
       display: flex;
       gap: 6px;
@@ -666,6 +671,17 @@
           <code>meta_api/pnrs_origin.csv</code>
           <code>meta_api/pnrs_operation.csv</code>
           <code>meta_api/pnrs_partners.csv</code>
+        </div>
+        <div style="height:14px"></div>
+        <h2>Auditoria de Fontes</h2>
+        <div class="alert-stack">
+          <div class="alert good"><strong>PNRS atualizado</strong><span>Planilha PNRS revisada em 08/06/2026: PNRS 4.410, PEV validado 900, realização 20,41%.</span></div>
+          <div class="alert warn"><strong>Meta Ads x planilha de leads</strong><span>O BI usa o export Meta para mídia: junho 700 leads e maio 2.880 leads. A planilha online de formulários mostra junho 744 e maio 2.859; manter como divergência de fonte até conexão via API.</span></div>
+          <div class="alert warn"><strong>SQL de junho</strong><span>O plano de mídia online ainda mostra junho com SQL 0. O BI usa o retorno comercial manual mais recente: SQL 29.</span></div>
+          <div class="alert">
+            <strong>Links auditados</strong>
+            <span><a href="https://docs.google.com/spreadsheets/d/1qkYdYO6jezbe7kHXanYRif1U_Rwwf8J1OZEqE7K-I6o/edit?gid=1267447072#gid=1267447072" target="_blank" rel="noreferrer">Formulários/leads</a> · <a href="https://docs.google.com/spreadsheets/d/1HAzflH8vzPM_KCO2AHyzAuZ1MvyyaYG8m_isQ9-SGRk/edit?gid=1134311805#gid=1134311805" target="_blank" rel="noreferrer">Plano de mídia</a> · <a href="https://docs.google.com/spreadsheets/d/1sjeieyyt1fDqOWFDue5Mu7Ha-gVmrWAW1uxCWXwAXOw/edit?gid=1422751996#gid=1422751996" target="_blank" rel="noreferrer">PNRS</a></span>
+          </div>
         </div>
       </section>
     </div>
