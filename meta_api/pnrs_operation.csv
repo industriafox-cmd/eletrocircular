@@ -1,21 +1,22 @@
 month,channel,metric,value,unit
-Abril,Prospecção,Ligações realizadas,1145,count
-Abril,Prospecção,Ligações completadas,410,count
-Abril,Prospecção,Interesses gerados,98,count
-Abril,Prospecção,Parceiros convertidos,22,count
-Abril,Prospecção,Conversão sobre ligação realizada,1.92,percent
-Abril,Prospecção,Conversão sobre ligação completada,5.37,percent
-Abril,Prospecção,Ligações/dia média,64,count
-Abril,Prospecção,Completadas/dia média,23,count
-Abril,Formulário,Entradas totais,1606,count
-Abril,Formulário,Entradas/dia média,89,count
-Abril,Formulário,Manifestações de interesse,282,count
-Abril,Formulário,Parceiros convertidos,200,count
-Abril,Formulário,Taxa interesse x conversão,70.90,percent
-Abril,Formulário,Conversão final,12.45,percent
-Abril,Formulário,Assinaturas/dia média,11,count
-Abril,Campanha,Leads gerados,80,count
-Abril,Campanha,Leads validados,51,count
-Abril,Campanha,Taxa de validação,63.75,percent
-Abril,Campanha,PNRS convertidos,41,count
-Abril,Campanha,Conversão total,51.25,percent
+Maio,Formulário nativo,PEVs entregues,204,count
+Maio,Formulário nativo,Leads / entradas,2110,count
+Maio,Formulário nativo,Taxa conversão,9.67,percent
+Maio,Campanha (mídia paga),PEVs entregues,71,count
+Maio,Campanha (mídia paga),Leads / entradas,120,count
+Maio,Campanha (mídia paga),Taxa conversão,59.17,percent
+Maio,Follow-up,PEVs entregues,13,count
+Maio,Follow-up,Leads / entradas,56,count
+Maio,Follow-up,Taxa conversão,23.21,percent
+Maio,Pontos gestor,PEVs entregues,63,count
+Maio,Pontos gestor,Leads / entradas,63,count
+Maio,Pontos gestor,Taxa conversão,100.00,percent
+Maio,Escoteiros,PEVs entregues,20,count
+Maio,Escoteiros,Leads / entradas,20,count
+Maio,Escoteiros,Taxa conversão,100.00,percent
+Maio,Casa da Amizade,PEVs entregues,10,count
+Maio,Casa da Amizade,Leads / entradas,10,count
+Maio,Casa da Amizade,Taxa conversão,100.00,percent
+Maio,LBV,PEVs entregues,2,count
+Maio,LBV,Leads / entradas,2,count
+Maio,LBV,Taxa conversão,100.00,percent
