@@ -1,6 +1,6 @@
 month,since,until,spend,leads,validations,sql,source
-Fevereiro,2026-02-01,2026-02-28,5510.00,185,166,0,Google Sheets + gestão de pontos
-Março,2026-03-01,2026-03-31,10187.04,791,661,76,Google Sheets + gestão de pontos
-Abril,2026-04-01,2026-04-30,13938.10,1605,1282,168,Google Sheets + gestão de pontos
-Maio,2026-05-01,2026-05-31,9999.19,2880,2455,267,Meta export + Google Sheets + gestão SQL
-Junho,2026-06-01,2026-06-30,7962.44,2201,1524,122,Meta export até 30/06 + Forms junho + SQL Forms manual
+Fevereiro,2026-02-01,2026-02-28,5976.26,185,166,0,Meta Invoice Summary + gestão de pontos
+Março,2026-03-01,2026-03-31,8859.11,791,661,76,Meta Invoice Summary + gestão de pontos
+Abril,2026-04-01,2026-04-30,11489.06,1605,1282,168,Meta Invoice Summary + gestão de pontos
+Maio,2026-05-01,2026-05-31,11596.39,2880,2455,267,Meta Invoice Summary + Forms + gestão SQL
+Junho,2026-06-01,2026-06-30,13237.89,2201,1524,122,Meta Invoice Summary até 30/06 + Forms junho + SQL Forms manual
