@@ -1,22 +1,19 @@
 month,channel,metric,value,unit
-Maio,Formulário nativo,PEVs entregues,204,count
-Maio,Formulário nativo,Leads / entradas,2110,count
-Maio,Formulário nativo,Taxa conversão,9.67,percent
-Maio,Campanha (mídia paga),PEVs entregues,71,count
-Maio,Campanha (mídia paga),Leads / entradas,120,count
-Maio,Campanha (mídia paga),Taxa conversão,59.17,percent
-Maio,Follow-up,PEVs entregues,13,count
-Maio,Follow-up,Leads / entradas,56,count
-Maio,Follow-up,Taxa conversão,23.21,percent
-Maio,Pontos gestor,PEVs entregues,63,count
-Maio,Pontos gestor,Leads / entradas,63,count
-Maio,Pontos gestor,Taxa conversão,100.00,percent
-Maio,Escoteiros,PEVs entregues,20,count
-Maio,Escoteiros,Leads / entradas,20,count
-Maio,Escoteiros,Taxa conversão,100.00,percent
-Maio,Casa da Amizade,PEVs entregues,10,count
-Maio,Casa da Amizade,Leads / entradas,10,count
-Maio,Casa da Amizade,Taxa conversão,100.00,percent
-Maio,LBV,PEVs entregues,2,count
-Maio,LBV,Leads / entradas,2,count
-Maio,LBV,Taxa conversão,100.00,percent
+Junho,Geral,Entradas,2201,count
+Junho,Geral,CNPJs Ativos,1524,count
+Junho,Geral,Inaptos/Baixados,98,count
+Junho,Geral,Verif. CNPJ,578,count
+Junho,Geral,PEV Validado,176,count
+Junho,Geral,Conversão total,8.00,percent
+Junho,PNRS,Entradas,1370,count
+Junho,PNRS,CNPJs Ativos,945,count
+Junho,PNRS,Inaptos/Baixados,67,count
+Junho,PNRS,Verif. CNPJ,357,count
+Junho,PNRS,PEV Validado,122,count
+Junho,PNRS,Conversão total,8.91,percent
+Junho,Não PNRS,Entradas,831,count
+Junho,Não PNRS,CNPJs Ativos,579,count
+Junho,Não PNRS,Inaptos/Baixados,31,count
+Junho,Não PNRS,Verif. CNPJ,221,count
+Junho,Não PNRS,PEV Validado,54,count
+Junho,Não PNRS,Conversão total,6.50,percent
